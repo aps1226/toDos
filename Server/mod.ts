@@ -11,9 +11,10 @@ app.use(
   })
 );
 
-addEventListener("fetch", ()=>{
-  app.use(router.routes());
-  app.use(router.allowedMethods());
-});
+app.use(router.routes());
+app.use(router.allowedMethods());
+
+addEventListener("fetch", app.fetchEventHandler());
+
 console.log("running on port ", port);
 // await app.listen({ port: port });
