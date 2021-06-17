@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function(){
   document.getElementById('task-button').addEventListener('click',addTasks);
 
   function getTasks (){
+    console.log('get task')
     const listElement = document.getElementById('task-list');
     fetch(`${url}/toDos`, {
       method: 'GET',

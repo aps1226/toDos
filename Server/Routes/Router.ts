@@ -23,6 +23,7 @@ router
     }
   })
   .get("/toDos", async ctx => {
+    console.log('get request');
     const toDos_findAll = await toDos
       .find({ _id: { $ne: null } }, { noCursorTimeout: false })
       .toArray();
