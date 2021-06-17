@@ -1,3 +1,5 @@
+const url = 'localhost:8080';
+
 document.addEventListener("DOMContentLoaded", function(){
 
   getTasks();
@@ -8,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   function getTasks (){
     const listElement = document.getElementById('task-list');
-    fetch('http://localhost:8000/toDos', {
+    fetch(`http://${url}/toDos`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -37,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function(){
   function addTasks(){
     const task = document.getElementById('task').value;
     document.getElementById('task').value = '';
-    fetch('http://localhost:8000/toDos', {
+    fetch(`http://${url}/toDos`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -54,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   function removeTasks(e){
     const id = e.target.parentNode.id;
-    fetch(`http://localhost:8000/toDos:id?id=${id}`, {
+    fetch(`http://${url}/toDos:id?id=${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
