@@ -1,4 +1,5 @@
-const url = 'localhost:8080';
+// const url = 'http://localhost:8080';
+const url = 'https://todos-f18efbb6.deno.dev';
 
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   function getTasks (){
     const listElement = document.getElementById('task-list');
-    fetch(`http://${url}/toDos`, {
+    fetch(`${url}/toDos`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -39,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function(){
   function addTasks(){
     const task = document.getElementById('task').value;
     document.getElementById('task').value = '';
-    fetch(`http://${url}/toDos`, {
+    fetch(`${url}/toDos`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -56,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   function removeTasks(e){
     const id = e.target.parentNode.id;
-    fetch(`http://${url}/toDos:id?id=${id}`, {
+    fetch(`${url}/toDos:id?id=${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

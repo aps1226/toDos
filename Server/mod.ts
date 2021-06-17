@@ -7,7 +7,7 @@ const port: number = 8000;
 
 app.use(
   oakCors({
-    origin: "*"
+    origin: "https://todos-f18efbb6.deno.dev"
   })
 );
 
