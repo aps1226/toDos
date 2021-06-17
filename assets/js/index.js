@@ -1,5 +1,5 @@
-// const url = 'http://localhost:8080';
-const url = 'https://todos.deno.dev';
+const url = 'http://localhost:8080';
+// const url = 'https://todos.deno.dev';
 
 document.addEventListener("DOMContentLoaded", function(){
 
