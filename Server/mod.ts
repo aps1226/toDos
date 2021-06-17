@@ -7,7 +7,7 @@ const port: number = 8000;
 
 app.use(
   oakCors({
-    origin: 'null'
+    origin: '*'
   })
 );
 
