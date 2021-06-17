@@ -45,9 +45,11 @@ document.addEventListener("DOMContentLoaded", function(){
       body: JSON.stringify({task})
     })
     .then((res) => res.json())
-    .then((data) => console.log(data));
-
-    getTasks();
+    .then((data) =>{
+      console.log(data)
+      location.reload();
+      return getTasks();
+    });
   }
 
   function removeTasks(e){
@@ -67,5 +69,6 @@ document.addEventListener("DOMContentLoaded", function(){
     });
   }
 });
+
 
 
