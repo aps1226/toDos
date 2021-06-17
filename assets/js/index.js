@@ -14,12 +14,9 @@ document.addEventListener("DOMContentLoaded", function(){
         'Content-Type': 'application/json',
       }
     })
+    .then((res) =>res.json())
     .then((res) =>{
-      console.log(res)
-      return res.json()
-    })
-    .then((res) =>{
-      console.log(res)
+      console.log('get tasks called')
       for(let i = 0; i < res.length; i++){
         if(!document.getElementById(res[i]._id)){
           console.log('response: ',res[i])
@@ -59,12 +56,16 @@ document.addEventListener("DOMContentLoaded", function(){
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-      }
-    }).then((res) => res.json())
-      .then((data) => console.log(data));
-    location.reload();
+      },
+      body: JSON.stringify(id)
+    })
+    .then((res) => res.json())
+    .then((data) =>{
+      console.log(data)
+      location.reload();
+      return getTasks();
+    });
   }
-
-
 });
+
 
